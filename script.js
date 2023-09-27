@@ -3,7 +3,7 @@ var win = 0;
 var lose = 0;
 var tie = 0;
 
-rockPaperScissorsGame()
+document.addEventListener('DOMContentLoaded', rockPaperScissorsGame())
 
 function rockPaperScissorsGame() {
     var userResponse = prompt("Type r, p, s")
