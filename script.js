@@ -1,3 +1,42 @@
+
+var win = 0;
+var lose = 0;
+var tie = 0;
+
+rockPaperScissorsGame()
+
+function rockPaperScissorsGame() {
+    var userResponse = prompt("Type r, p, s")
+    
+    
+    var choiceArray = ["r", "p", "s"]
+    var compResFromula = Math.floor(Math.random() * choiceArray.length)
+    var compResponse = choiceArray[compResFromula]
+    
+    alert(`The computer chose ${compResponse}`)
+    
+    if(compResponse === userResponse) {
+        alert("you tied!");
+        tie++
+    } else if (
+        (userResponse === "r" && compResponse === "s") ||
+        (userResponse === "s" && compResponse === "p") ||
+        (userResponse === "p" && compResponse === "r")
+    ) {
+        alert("you win!");
+        win++
+    } else {
+        alert("you lose!")
+        lose++
+    }
+
+alert(`Wins: ${win} Loses: ${lose} Ties: ${tie}`)
+
+var playAgain = confirm("Do you want to play again?")
+
+if(playAgain) rockPaperScissorsGame()
+}
+
 //set varables to win/lose/tie to Zero
 
 //Set Prompt to ask user to choose r-p-s
